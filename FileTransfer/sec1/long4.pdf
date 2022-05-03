@@ -1,0 +1,31 @@
+The execution command should have the following structure:  
+deliver <server address> <server port number>  
+Upon  execution,  the  client  program  should  read  data  from  a  file  specified  by  the  user, 
+construct  struct packets,  and  send  the  packets  to  the  server  using  a  UDP  socket.  If  a 
+file is larger than 1000 bytes, it needs to be fragmented into multiple packets with maximum 
+size 1000 before transmission. 
+ 
+You should test your code with large files (you can try putting them in the tmp/ directory on 
+the  UG  machines;  we  have  heard  this  does  not  affect  your  disk  quota).  You  can  use  the 
+following command to create a large file (change the ??5M?? at the end to suit your needs):  dd if=/dev/zero of=./test.file bs=4k iflag=fullblock,count_bytes count=5M 
+The execution command should have the following structure:  
+deliver <server address> <server port number>  
+Upon  execution,  the  client  program  should  read  data  from  a  file  specified  by  the  user, 
+construct  struct packets,  and  send  the  packets  to  the  server  using  a  UDP  socket.  If  a 
+file is larger than 1000 bytes, it needs to be fragmented into multiple packets with maximum 
+size 1000 before transmission. 
+ 
+You should test your code with large files (you can try putting them in the tmp/ directory on 
+the  UG  machines;  we  have  heard  this  does  not  affect  your  disk  quota).  You  can  use  the 
+following command to create a large file (change the ??5M?? at the end to suit your needs):  dd if=/dev/zero of=./test.file bs=4k iflag=fullblock,count_bytes count=5M 
+The execution command should have the following structure:  
+deliver <server address> <server port number>/0/0/0  
+Upon  execution,  the  client  program  should  read  data  from  a  file  specified  by  the  user, 
+construct  struct packets,  and  send  the  packets  to  the  server  using  a  UDP  socket.  If  a 
+file is larger than 1000 bytes, it needs to be fragmented into multiple packets with maximum 
+size 1000 before transmission. 
+ 
+You should test your code with large files (you can try putting them in the tmp/ directory on 
+the  UG  machines;  we  have  heard  this  does  not  affect  your  disk  quota).  You  can  use  the 
+following command to create a large file (change the ??5M?? at the end to suit your needs):  dd if=/dev/zero of=./test.file bs=4k iflag=fullblock,count_bytes count=5M 
+Hello We are testing with more characters now...

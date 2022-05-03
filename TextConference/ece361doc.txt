@@ -1,0 +1,58 @@
+﻿ECE361 Lab 5 
+
+
+
+
+1. Private Messaging
+
+
+Description:
+We decided to implement private messaging where 1 client can send a private message to another client regardless of what session are they in/not in as long as both are logged into the server database. In command line to initiate this feature, the client must type:
+        pm <username they’d like to message> [space] <text>
+
+
+Implementation:
+The client code will send this information to the server. 
+The server first looks for the destination user in the database
+* Then checks if that user is logged in
+   * If they are logged in, the server will send the private message to that destination client
+   * Then the server will also PM_ACK the original client to ensure them that the private message was sent
+* If the destination user is not logged in
+   * Then the server sends a PM_NAK to the original client because they are unable to send the private message
+
+
+
+
+Additions:
+We added new packet types like PM, PM_ACK, PM_NAK.
+
+
+
+
+________________
+
+
+2. Invite
+
+
+Description: 
+The second feature that was implemented for this section was invite. Invite essentially allows a user to invite another active user into the session where they currently belong. In the command line to initiate this feature, the client must type:
+ invite <username of user they’d like to invite>
+
+
+Implementation:
+Once the above command is typed, the client code will take this information then serialize the information and get it ready to send to the server.
+The server then receives this information, deserializes it and uses it to make several checks before sending the user this invite. 
+Checks made by server:
+* Check if inviting user is in a session (if not in session, NAK sent to client)
+* Check if invited user is logged in (if not logged in, NAK sent to client)
+* Check if the invited user is already in a session (if in session, NAK sent to client)        
+
+
+If all the above checks are successfully passed, then the server sends the invited client a message about this invitation.
+The invited client then prints a message on terminal to allow the invited client to either reject or accept the invite. Once the decision is made a packet is sent with the decision to the server.
+Upon receiving the decision the server looks at the response, and sends the inviting client an ACK or NAK based on if the invite was accepted or declined, respectively. 
+ 
+        
+Additions:
+We added new packet types like INVITE, INV_ACK, INV_NAK.
